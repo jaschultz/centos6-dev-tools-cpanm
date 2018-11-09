@@ -13,4 +13,5 @@ RUN yum update -y \
   perl-CPAN \
   && yum clean all
 
-RUN wget -O - http://cpanmin.us | perl - App::cpanminus
+RUN wget -O /usr/local/bin/cpanm http://cpanmin.us 
+RUN chmod +x /usr/local/bin/cpanm
