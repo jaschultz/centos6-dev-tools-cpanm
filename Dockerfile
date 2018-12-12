@@ -10,6 +10,9 @@ RUN yum update -y \
   gettext \
   which \
   file-devel \
+  glibc-devel.i686 \
+  glibc.i686 \
+  libstdc++.i686 \
   perl-CPAN \
   && yum clean all
 
