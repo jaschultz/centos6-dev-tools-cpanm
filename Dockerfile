@@ -14,6 +14,7 @@ RUN yum update -y \
   glibc.i686 \
   libstdc++.i686 \
   perl-CPAN \
+  xsltproc \
   && yum clean all
 
 RUN wget -O /usr/local/bin/cpanm http://cpanmin.us 
