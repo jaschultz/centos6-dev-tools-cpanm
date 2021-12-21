@@ -1,21 +1,17 @@
-FROM centos:centos6
+FROM centos:7
 
 RUN yum update -y \
   && yum groupinstall -y "Development Tools" \
   && yum install -y \
-  libtool \
-  autoconf \
-  automake \
+  sudo \
   wget \
-  gettext \
   which \
   file-devel \
+  pcre-devel \
   glibc-devel.i686 \
   glibc.i686 \
   libstdc++.i686 \
   perl-CPAN \
-  xsltproc \
+  perl-App-cpanminus \
+  libxslt \
   && yum clean all
-
-RUN wget -O /usr/local/bin/cpanm http://cpanmin.us 
-RUN chmod +x /usr/local/bin/cpanm
