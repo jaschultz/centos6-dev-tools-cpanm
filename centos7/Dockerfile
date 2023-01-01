@@ -8,7 +8,7 @@ RUN yum groupinstall -y "Development Tools" \
   wget \
   which \
   file-devel \
-  pcre-devel \
+  pcre2-devel \
   perl-CPAN \
   perl-App-cpanminus \
   libxslt
@@ -22,3 +22,12 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     fi
 
 RUN yum clean all
+
+RUN wget http://prdownloads.sourceforge.net/swig/swig-4.1.1.tar.gz \
+    && tar -xvzf swig-4.1.1.tar.gz \
+    && pushd swig-4.1.1 \
+    && ./configure \
+    && make \
+    && make install \
+    && popd \
+    && rm -rf swig-4.1.1*
